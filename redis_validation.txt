@@ -1,0 +1,23 @@
+Redis not started
+================
+
+* I have checked the status of the redis service and found the errors like start-limit-hit hence decided to start as a redis user to get more information
+
+* su - redis -s \bin\bash
+
+* /usr/bin/redis-server /etc/redis/redis.conf - check the config errors and to start the service
+
+got the error:
+
+cannot open file : /var/log/redis-server.log
+
+* log file not present in that mentioned location and it is present under /var/log/redis/redis-server.log
+
+* changed the log file path to /var/log/redis/redis-server.log  in the config file
+
+* Started the service and it got up and running
+* Systemctl start redis.service
+stylelabs@gopalak-lnx:~$ systemctl status redis.service
+● redis-server.service - Advanced key-value store
+   Loaded: loaded (/lib/systemd/system/redis-server.service; enabled; vendor preset: enabled)
+   Active: active (running) 

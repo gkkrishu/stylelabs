@@ -1,0 +1,8 @@
+* Tried http:\\localhost in browser and got 503 exception
+* have checked the physical path of the application and it is present as mentioned 
+* checked the status of defaultAppPool and it is stopped
+* tried to start the AppPool service but it got stopped on its own
+* Went to sites -> default web site's basic setting to make a test connection
+* in test connection, i got authentication/authorization error.
+* changed the DefaultAppPool identity to ApplicationPoolIdentity to solve this issue under advanced settings.
+* web site started accessing in browser
